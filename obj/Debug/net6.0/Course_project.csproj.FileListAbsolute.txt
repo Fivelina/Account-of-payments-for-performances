@@ -1,0 +1,17 @@
+C:\Users\VReva\source\repos\Course_project\Course_project\bin\Debug\net6.0\Course_project.exe
+C:\Users\VReva\source\repos\Course_project\Course_project\bin\Debug\net6.0\Course_project.deps.json
+C:\Users\VReva\source\repos\Course_project\Course_project\bin\Debug\net6.0\Course_project.runtimeconfig.json
+C:\Users\VReva\source\repos\Course_project\Course_project\bin\Debug\net6.0\Course_project.dll
+C:\Users\VReva\source\repos\Course_project\Course_project\bin\Debug\net6.0\Course_project.pdb
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.csproj.AssemblyReference.cache
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.AssemblyInfoInputs.cache
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.AssemblyInfo.cs
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.csproj.CoreCompileInputs.cache
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.dll
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\refint\Course_project.dll
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.pdb
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.genruntimeconfig.cache
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\ref\Course_project.dll
+C:\Users\VReva\source\repos\Course_project\Course_project\bin\Debug\net6.0\CsvHelper.dll
+C:\Users\VReva\source\repos\Course_project\Course_project\obj\Debug\net6.0\Course_project.csproj.CopyComplete

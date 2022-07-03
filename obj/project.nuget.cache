@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dZJr2LkwxT4Kq03C1GDXl4gbPeYdwTGbzLE+4pZyjUwdgrjlnKykmmVR9vwNS7zdRgQfKrZgnMVZ1vZdWeP9sw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\VReva\\source\\repos\\Course_project\\Course_project\\Course_project.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\VReva\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
