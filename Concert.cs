@@ -164,25 +164,21 @@ namespace Course_project
         {
             while (true)
             {
-                if (!int.TryParse(Console.ReadLine(), out number))
+                if (int.TryParse(Console.ReadLine(), out number))
                 {
-                    if ((popul.Equals("Низкая") && (number <= 39000 && number >= 10000)))
+                    Console.Clear();
+
+                    if ((popul.Equals("Низкая") && number <= 39000 && number >= 10000) || 
+                        (popul.Equals("Средняя") && number <= 100000 && number >= 40000) ||
+                        (popul.Equals("Высокая") && number < 100001))
                     {
-                        Console.WriteLine("Ошибка! Попробуйте ещё раз: ");
-                    }
-                    if (!(popul.Equals("Средняя") && number <= 100000 && number >= 40000))
-                    {
-                        break;
-                    }
-                    if (!(popul.Equals("Высокая") && number < 100001))
-                    {
-                        break;
+                        return number;
                     }
                 }
-                break;
+                Console.WriteLine("Ошибка! Попробуйте ещё раз: ");
+                continue;
             }
-            Console.Clear();
-            return number;
+            
         }
         public int CheckConcertNumber(int number)
         {
@@ -406,8 +402,7 @@ namespace Course_project
         public void TotalConcertNumber() //second request
         {
             string requestedGenre = InputGenre();
-            var totalNumber = bands.Where(x => x.Genre == requestedGenre)
-                                   .Sum(x => x.ConcertNumber);
+            var totalNumber = bands.Where(x => x.Genre == requestedGenre).Sum(x => x.ConcertNumber);
             Console.WriteLine($"Количество концертов: {totalNumber}");
         }
 
@@ -444,7 +439,6 @@ namespace Course_project
             Console.WriteLine();
             Console.WriteLine("\tПо популярности");
             Console.WriteLine("\tПо общей сумме выплат");
-
             Console.SetCursorPosition(5, position);
 
             while (true)
@@ -473,7 +467,6 @@ namespace Course_project
                 SetCursorPosition(consoleKey, strCount);
             }
         }
-
         public void SortByPopularity() => bands = bands.OrderBy(x => x.Popularity).ToList();
         public void SortByPriceAll() => bands = bands.OrderBy(x => x.PriceAll).ToList();
 
