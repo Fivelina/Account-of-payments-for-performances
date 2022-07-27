@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Course_project
@@ -55,7 +56,11 @@ namespace Course_project
                 {
                     continue;
                 }
-                string[] parts = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] parts = line.Split(new char[] { ';' });
+                for (int i = 0; i < 6; i++)
+                {
+                    parts[i].Replace(";", "");
+                }
                 bands.Add(new Singer(parts[0], parts[1], parts[2], parts[3], int.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6])));
             }
             file.Close();
@@ -168,7 +173,7 @@ namespace Course_project
                 {
                     Console.Clear();
 
-                    if ((popul.Equals("Низкая") && number <= 39000 && number >= 10000) || 
+                    if ((popul.Equals("Низкая") && number <= 39000 && number >= 10000) ||
                         (popul.Equals("Средняя") && number <= 100000 && number >= 40000) ||
                         (popul.Equals("Высокая") && number < 100001))
                     {
@@ -178,7 +183,7 @@ namespace Course_project
                 Console.WriteLine("Ошибка! Попробуйте ещё раз: ");
                 continue;
             }
-            
+
         }
         public int CheckConcertNumber(int number)
         {
@@ -197,7 +202,8 @@ namespace Course_project
             {
                 Console.Write("Попробуйте ввести название группы/исполнителя: ");
                 tempName = Console.ReadLine();
-                if (tempName.Replace(" ", "").Length > 2 && !CheckNameExist(tempName))
+                var regex = new Regex(@"^[A-Z][a-z]{2,10}( [A-Z][a-z]{2,10})*$");
+                if (regex.IsMatch(tempName) && !CheckNameExist(tempName))
                 {
                     break;
                 }
@@ -236,7 +242,7 @@ namespace Course_project
 
             int priceAll = concertNum * price;
 
-            FileAdd(tempName, popul, genre, country, price, concertNum, priceAll);           
+            FileAdd(tempName, popul, genre, country, price, concertNum, priceAll);
         }
 
         public void FileAdd(string tempName, string popul, string genre, string country, int price, int concertNum, int priceAll)
@@ -245,12 +251,12 @@ namespace Course_project
             bands.Add(singer);
 
             using StreamWriter file = new StreamWriter(path, true);
-            file.Write(singer.Name + ' ');
-            file.Write(singer.Popularity + ' ');
-            file.Write(singer.Genre + ' ');
-            file.Write(singer.Country + ' ');
-            file.Write(singer.Price.ToString() + ' ');
-            file.Write(singer.ConcertNumber.ToString() + ' ');
+            file.Write(singer.Name + ';');
+            file.Write(singer.Popularity + ';');
+            file.Write(singer.Genre + ';');
+            file.Write(singer.Country + ';');
+            file.Write(singer.Price.ToString() + ';');
+            file.Write(singer.ConcertNumber.ToString() + ';');
             file.WriteLine(singer.PriceAll.ToString());
         }
 
@@ -258,7 +264,7 @@ namespace Course_project
         {
             Console.WriteLine("Выберете запись, которую хотите редактировать: ");
             Read();
-            
+
             string newLine = "";
             int elementNumber = 0;
             int count = 0;
@@ -462,7 +468,7 @@ namespace Course_project
                             CaseMessage();
                             return;
                     }
-                    
+
                 }
                 SetCursorPosition(consoleKey, strCount);
             }
